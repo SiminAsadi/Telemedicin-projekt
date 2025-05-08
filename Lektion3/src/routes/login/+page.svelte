@@ -18,7 +18,7 @@
 			if (username === 'admin') {
 				goto('/admin');
 			} else {
-				goto('/vitals');
+				goto('/home');
 			}
 		} else {
 			alert('Login failed!');
