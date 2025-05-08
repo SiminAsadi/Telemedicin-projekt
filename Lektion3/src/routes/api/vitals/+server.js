@@ -25,3 +25,17 @@ export async function POST({ request }) {
 
 	return json({ status });
 }
+
+export async function GET({ request }) {
+	const user = request.user;
+	if (!user) {
+		return json({ error: 'Unauthorized' }, { status: 401 });
+	}
+
+	const vitalsData = await db.query.vitals.findMany({
+		where: (vitals, { eq }) => eq(vitals.user_id, user.id),
+		orderBy: (vitals, { desc }) => desc(vitals.date)
+	});
+
+	return json(vitalsData);
+}

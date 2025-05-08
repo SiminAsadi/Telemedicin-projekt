@@ -45,8 +45,6 @@
 
 	<nav>
 		<a href="/login">🔐 Login</a>
-		<a href="/vitals">📊 Indtast vitale målinger</a>
-		<a href="/diary">📝 Skriv dagbog</a>
-		<a href="/admin">🔧 Admin-side</a>
+
 	</nav>
 </div>
