@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import { on } from "svelte/events";
+	import Title from '$lib/components/Title.svelte';
 
 	let weight = '';
 	let pulse = '';
@@ -41,8 +42,8 @@
     });
 </script>
 
+<Title>Indtast vitale målinger</Title>
 <div class="container">
-    <h1>Indtast vitale målinger</h1>
     <div class="card">
         <div class="input-container">
             <input class="input-field" bind:value={weight} type="number" placeholder="Vægt (kg)" />

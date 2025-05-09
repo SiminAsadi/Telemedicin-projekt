@@ -1,4 +1,5 @@
 <script>
+	import Title from '$lib/components/Title.svelte';
 	// valgfri
 </script>
 
@@ -40,11 +41,10 @@
 </style>
 
 <div class="container">
-	<h1>Telemedicin Portal</h1>
-	<p>Velkommen til vores digitale sundhedsplatform for patienter med hjertesvigt. Her kan du:</p>
+	<Title>Telemedicin Portal</Title>
+	<p style="margin-top: 1cm;">Velkommen til vores digitale sundhedsplatform for patienter med hjertesvigt.</p>
 
-	<nav>
+	<nav style="margin-top: 2cm;">
 		<a href="/login">🔐 Login</a>
-
 	</nav>
 </div>

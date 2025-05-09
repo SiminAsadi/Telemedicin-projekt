@@ -1,6 +1,7 @@
 import { db } from '$lib/server/db';
 import { vitals } from '$lib/server/db/schema';
 import { json } from '@sveltejs/kit';
+import { triageStatus } from '$lib/server/triage.js';
 
 export async function POST({ request }) {
 	const user = request.user;
@@ -10,10 +11,8 @@ export async function POST({ request }) {
 
 	const { weight, pulse, spo2 } = await request.json();
 
-	// Triage-logik
-	let status = 'green';
-	if (weight > 100 || pulse > 100 || spo2 < 92) status = 'yellow';
-	if (pulse > 120 || spo2 < 88) status = 'red';
+	// Brug fælles triage-logik
+	const status = triageStatus({ weight, pulse, spo2 });
 
 	// Gem målingen
 	await db.insert(vitals).values({

@@ -1,5 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
+	import Title from '$lib/components/Title.svelte';
 
 	let username = $state('user');
 	let password = $state('password');
@@ -26,6 +27,7 @@
 	};
 </script>
 
+<Title>Login</Title>
 
 <input class="input" bind:value={username} type="text" placeholder="Indtast Email" />
 <input class="input" bind:value={password} type="password" placeholder="Indtast Password" />

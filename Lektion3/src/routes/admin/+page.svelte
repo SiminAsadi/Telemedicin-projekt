@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import Title from '$lib/components/Title.svelte';
 	
 	let username = '';
 	let password = '';
@@ -60,7 +61,10 @@
 
 <!-- UI -->
 
-<h1 class="text-2xl font-bold mb-4">Den hemmelige administratorside</h1>
+<Title>Den hemmelige administratorside</Title>
+
+<!-- knap til vitals-oversigt -->
+<button class="btn btn-secondary mb-4" on:click={() => goto('/admin/vitals')}>Se alle brugeres målinger</button>
 
 <div class="space-y-2 mb-4">
 	<input type="text" bind:value={username} placeholder="Brugernavn" class="input input-bordered w-full" />

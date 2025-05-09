@@ -7,26 +7,29 @@
 	let content = '';
 	let loading = false;
 
+	// Hjælpefunktion: Hent dagbogslisten fra API
+	async function fetchDiary() {
+		loading = true;
+		const res = await fetch('/api/diary/self');
+		diary = await res.json();
+		loading = false;
+	}
+
+	// Gem dagbog og opdater listen automatisk
 	const saveDiary = async () => {
 		const response = await fetch('/api/diary/self', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ title, content })
 		});
-		const data = await response.json();
 		if (response.ok) {
-			diary.push(data);
 			title = '';
 			content = '';
+			await fetchDiary(); // Opdater listen automatisk
 		}
 	};
 
-	onMount(async () => {
-		loading = true;
-		const res = await fetch('/api/diary/self');
-		diary = await res.json();
-		loading = false;
-	});
+	onMount(fetchDiary);
 </script>
 
 <style>

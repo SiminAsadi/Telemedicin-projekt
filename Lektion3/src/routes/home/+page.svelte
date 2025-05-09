@@ -1,3 +1,7 @@
+<script>
+import Title from '$lib/components/Title.svelte';
+</script>
+
 <nav>
 	<div class="button-container">
 		<a href="/vitals">📊 Indtast vitale målinger</a>
@@ -5,6 +9,8 @@
 		<a href="/admin">🔧 Admin-side</a>
 	</div>
 </nav>
+
+<Title>Hjem</Title>
 
 <style>
 	.container {
