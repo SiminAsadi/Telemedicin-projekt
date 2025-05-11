@@ -1,22 +1,30 @@
-# sv
+# Telemedicine Project
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A web application for managing and monitoring patient vital signs in a telemedicine context. This project is built using SvelteKit and provides a modern, responsive interface for healthcare professionals.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Real-time monitoring of patient vital signs
+- Admin dashboard for healthcare professionals
+- Secure data management
+- Responsive design for various devices
 
+## Prerequisites
+
+- Node.js (version 16 or higher)
+- npm or yarn package manager
+
+## Installation
+
+1. Clone the repository
+2. Install dependencies:
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npm install
 ```
 
-## Developing
+## Development
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start the development server:
 
 ```bash
 npm run dev
@@ -25,7 +33,9 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+The application will be available at `http://localhost:5173`
+
+## Building for Production
 
 To create a production version of your app:
 
@@ -33,6 +43,21 @@ To create a production version of your app:
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with:
+```bash
+npm run preview
+```
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Project Structure
+
+- `/src/routes` - Contains all the application routes and pages
+- `/src/lib` - Shared components and utilities
+- `/src/routes/api` - Backend API endpoints
+
+## Contributing
+
+This project is part of a telemedicine course at DTU. For internal development, please follow the established coding standards and practices.
+
+## License
+
+This project is for educational purposes at DTU.
