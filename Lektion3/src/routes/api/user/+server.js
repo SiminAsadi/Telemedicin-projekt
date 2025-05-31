@@ -1,7 +1,7 @@
 import { db } from '$lib/server/db';
 import { user } from '$lib/server/db/schema.js';
 import bcrypt from 'bcryptjs';
-import { eq } from 'drizzle-orm'; // 👈 tilføj denne!
+import { eq } from 'drizzle-orm';
 
 export async function POST({ request }) {
 	const { username, password } = await request.json();
